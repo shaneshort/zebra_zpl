@@ -1,6 +1,7 @@
 class ZebraZpl::Field
 
   include ZebraZpl::Commands::FieldOrigin
+  include ZebraZpl::Commands::Font
 
   attr_accessor :data
 
