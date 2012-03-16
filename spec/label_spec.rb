@@ -14,15 +14,6 @@ describe ZebraZpl::Label do
 
   end
 
-  describe '.build' do
-
-    it 'returns a label' do
-      l = ZebraZpl::Label.build {}
-      l.should be_a(ZebraZpl::Label)
-    end
-
-  end
-
   describe 'commands' do
 
     let(:label) { ZebraZpl::Label.new }
