@@ -3,6 +3,7 @@ end
 
 %w[
   default_width
+  field_origin
   home
   orientation
   print_rate

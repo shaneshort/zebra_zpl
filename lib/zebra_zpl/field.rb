@@ -1,5 +1,7 @@
 class ZebraZpl::Field
 
+  include ZebraZpl::Commands::FieldOrigin
+
   attr_accessor :data
 
   def initialize
