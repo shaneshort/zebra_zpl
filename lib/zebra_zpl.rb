@@ -2,6 +2,8 @@ module ZebraZpl
 end
 
 require 'zebra_zpl/commands'
-require 'zebra_zpl/field'
-require 'zebra_zpl/label'
-require 'zebra_zpl/label_builder'
+
+%w[ field label ].each do |lib|
+  require "zebra_zpl/#{ lib }"
+  require "zebra_zpl/#{ lib }_builder"
+end

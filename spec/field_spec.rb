@@ -16,7 +16,7 @@ describe ZebraZpl::Field do
 
     describe '#origin=' do
 
-      it 'adds an Field Origin to the label' do
+      it 'adds an Field Origin to the field' do
         field.origin = [46, 2]
         field.data.should include('^FO46,2')
       end
