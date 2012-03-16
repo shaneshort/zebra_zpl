@@ -63,6 +63,15 @@ describe ZebraZpl::Label do
 
     end
 
+    describe '#quantity=' do
+
+      it 'adds an Bar Code Field Default to the label' do
+        label.quantity = 4
+        label.data.should include('^PQ4')
+      end
+
+    end
+
   end
 
   describe '#to_s' do

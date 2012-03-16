@@ -4,6 +4,7 @@ class ZebraZpl::Label
   include ZebraZpl::Commands::Home
   include ZebraZpl::Commands::Orientation
   include ZebraZpl::Commands::PrintRate
+  include ZebraZpl::Commands::Quantity
 
   attr_accessor :data
 

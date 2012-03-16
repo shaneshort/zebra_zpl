@@ -6,4 +6,5 @@ end
   home
   orientation
   print_rate
+  quantity
 ].each { |f| require "zebra_zpl/commands/#{ f }"}
