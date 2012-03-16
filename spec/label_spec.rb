@@ -23,6 +23,17 @@ describe ZebraZpl::Label do
 
   end
 
+  describe '#home=' do
+
+    let(:label) { ZebraZpl::Label.new }
+
+    it 'adds a Label Home command to the label' do
+      label.home = [5, 10]
+      label.data.should include('^LH5,10')
+    end
+
+  end
+
   describe '#to_s' do
 
     let(:label) { ZebraZpl::Label.new }
