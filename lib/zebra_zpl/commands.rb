@@ -1,6 +1,9 @@
 module ZebraZpl::Commands
 end
 
-require 'zebra_zpl/commands/default_width'
-require 'zebra_zpl/commands/home'
-require 'zebra_zpl/commands/orientation'
+%w[
+  default_width
+  home
+  orientation
+  print_rate
+].each { |f| require "zebra_zpl/commands/#{ f }"}

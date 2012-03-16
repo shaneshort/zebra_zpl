@@ -3,6 +3,7 @@ class ZebraZpl::Label
   include ZebraZpl::Commands::DefaultWidth
   include ZebraZpl::Commands::Home
   include ZebraZpl::Commands::Orientation
+  include ZebraZpl::Commands::PrintRate
 
   attr_accessor :data
 

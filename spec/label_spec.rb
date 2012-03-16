@@ -54,6 +54,15 @@ describe ZebraZpl::Label do
 
     end
 
+    describe '#print_rate=' do
+
+      it 'adds an Bar Code Field Default to the label' do
+        label.print_rate = :a
+        label.data.should include('^PRA')
+      end
+
+    end
+
   end
 
   describe '#to_s' do
