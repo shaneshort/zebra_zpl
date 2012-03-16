@@ -1,5 +1,5 @@
-Zebra ZPL
-=========
+Zebra ZPL [![build status][status-image]][ci]
+=============================================
 
 Writing Zebra ZPL files shouldn't vomit raw ASCII in your code.
 
@@ -27,3 +27,9 @@ end
 
 label.to_s # => ^XA^FWN^LH20,0^BY0,0^PRA^PQ4^FO5,20^ADN,60^FB1175,5,,^FDTest^FS^XZ
 ```
+
+<!-- links -->
+[ci]: http://travis-ci.org/BM5k/zebra_zpl "build status"
+
+<!-- images -->
+[status-image]: https://secure.travis-ci.org/BM5k/zebra_zpl.png?branch=master
