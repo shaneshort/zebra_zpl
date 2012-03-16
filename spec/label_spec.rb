@@ -65,13 +65,7 @@ describe ZebraZpl::Label do
 
   end
 
-  describe '#to_s' do
-
-    let(:label) { ZebraZpl::Label.new }
-
-    its(:to_s) { should =~ /^\^XA/ }
-    its(:to_s) { should =~ /\^XZ$/ }
-
-  end
+  its(:to_s) { should =~ /^\^XA/ }
+  its(:to_s) { should =~ /\^XZ$/ }
 
 end
