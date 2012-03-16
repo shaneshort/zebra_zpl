@@ -1,5 +1,11 @@
 class ZebraZpl::Label
 
+  attr_accessor :data
+
+  def initialize
+    @data = []
+  end
+
   PREFIX = '^XA'
   SUFFIX = '^XZ'
 
@@ -10,7 +16,7 @@ class ZebraZpl::Label
   end
 
   def to_s
-    "#{ PREFIX }#{ SUFFIX }"
+    "#{ PREFIX }#{ data.join '' }#{ SUFFIX }"
   end
 
 end
