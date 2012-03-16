@@ -10,4 +10,6 @@ describe ZebraZpl::Field do
 
   end
 
+  its(:to_s) { should =~ /\^FS$/ }
+
 end

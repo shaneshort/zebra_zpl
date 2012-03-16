@@ -8,4 +8,14 @@ class ZebraZpl::Field
 
   SUFFIX = '^FS'
 
+  # def self.build &block
+  #   builder = ZebraZpl::FieldBuilder.new
+  #   builder.instance_eval &block
+  #   builder.field
+  # end
+
+  def to_s
+    "#{ data.join '' }#{ SUFFIX }"
+  end
+
 end
