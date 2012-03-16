@@ -56,11 +56,11 @@ module ZebraZpl::Commands::Font
   #
   # Field Usage:
   #   f = ZebraZpl::Field.new
-  #   f.font = :a 
-  #   f.font = :b, :orientation => :n 
-  #   f.font = :c, height: 30 
-  #   f.font = :d, height: 15, width: 20 
-  #   f.font = :e, :orientation => :r, height: 15, width: 20 
+  #   f.font = :a
+  #   f.font = :b, :orientation => :n
+  #   f.font = :c, height: 30
+  #   f.font = :d, height: 15, width: 20
+  #   f.font = :e, :orientation => :r, height: 15, width: 20
   def font= *args
     name, options = args
     options ||= {}
