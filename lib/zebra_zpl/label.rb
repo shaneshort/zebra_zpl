@@ -1,5 +1,6 @@
 class ZebraZpl::Label
 
+  include ZebraZpl::Commands::DefaultWidth
   include ZebraZpl::Commands::Home
   include ZebraZpl::Commands::Orientation
 

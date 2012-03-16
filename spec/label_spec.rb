@@ -23,6 +23,17 @@ describe ZebraZpl::Label do
 
   end
 
+  describe '#default_width=' do
+
+    let(:label) { ZebraZpl::Label.new }
+
+    it 'adds an Bar Code Field Default to the label' do
+      label.default_width = 3
+      label.data.should include('^BY3')
+    end
+
+  end
+
   describe '#home=' do
 
     let(:label) { ZebraZpl::Label.new }
