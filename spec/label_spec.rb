@@ -2,6 +2,8 @@ require 'spec_helper'
 
 describe ZebraZpl::Label do
 
+  let(:label) { ZebraZpl::Label.new }
+
   describe 'constants' do
 
     it 'PREFIX' do
@@ -25,8 +27,6 @@ describe ZebraZpl::Label do
 
   describe '#default_width=' do
 
-    let(:label) { ZebraZpl::Label.new }
-
     it 'adds an Bar Code Field Default to the label' do
       label.default_width = 3
       label.data.should include('^BY3')
@@ -36,8 +36,6 @@ describe ZebraZpl::Label do
 
   describe '#home=' do
 
-    let(:label) { ZebraZpl::Label.new }
-
     it 'adds a Label Home command to the label' do
       label.home = [5, 10]
       label.data.should include('^LH5,10')
@@ -46,8 +44,6 @@ describe ZebraZpl::Label do
   end
 
   describe '#orientation=' do
-
-    let(:label) { ZebraZpl::Label.new }
 
     it 'adds a Field Orientation command to the label' do
       label.orientation = :n
