@@ -34,6 +34,17 @@ describe ZebraZpl::Label do
 
   end
 
+  describe '#orientation=' do
+
+    let(:label) { ZebraZpl::Label.new }
+
+    it 'adds a Field Orientation command to the label' do
+      label.orientation = :n
+      label.data.should include('^FWN')
+    end
+
+  end
+
   describe '#to_s' do
 
     let(:label) { ZebraZpl::Label.new }

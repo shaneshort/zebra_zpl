@@ -1,6 +1,8 @@
 class ZebraZpl::Label
 
   include ZebraZpl::Commands::Home
+  include ZebraZpl::Commands::Orientation
+
   attr_accessor :data
 
   def initialize
