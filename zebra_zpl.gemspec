@@ -9,7 +9,7 @@ Gem::Specification.new do |s|
   s.email       = ['me@bm5k.com']
   s.homepage    = ''
   s.summary     = 'Create Zebra labels'
-  s.description = 'TODO: Write a gem description'
+  s.description = 'Use ruby to describe labels, fields, and barcodes for printing via ZPL II.'
 
   s.files         = `git ls-files`.split("\n")
   s.test_files    = `git ls-files -- {test,spec,features}/*`.split("\n")
