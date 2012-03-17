@@ -2,18 +2,13 @@ module ZebraZpl::Commands::PrintRate
 
   COMMAND = '^PR'
 
-  def self.included base
-    base.send :include, InstanceMethods
-  end
+  def print_rate= *args
+    print_speed, slew_speed, backfeed_speed = [*args]
 
-  module InstanceMethods
+    print_speed = print_speed.to_s.upcase
+    params      = [print_speed, slew_speed, backfeed_speed]
 
-    def print_rate= print_speed, slew_speed = nil, backfeed_speed = nil
-      rate = print_speed.to_s.upcase
-      params = [rate, slew_speed, backfeed_speed].compact
-      @data << "#{ COMMAND }#{ params.join ',' }"
-    end
-
+    @data << "#{ COMMAND }#{ params.join ',' }"
   end
 
 end

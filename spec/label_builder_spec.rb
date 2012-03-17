@@ -33,7 +33,7 @@ describe ZebraZpl::LabelBuilder do
   describe '#print_rate' do
 
     it 'adds an Bar Code Field Default to the label' do
-      ZebraZpl::Label.build { print_rate :a }.to_s.should =~ /\^PRA/
+      ZebraZpl::Label.build { print_rate :a }.to_s.should =~ /\^PRA,,/
     end
 
   end
