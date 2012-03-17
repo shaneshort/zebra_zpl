@@ -6,6 +6,18 @@
 #
 #     ^FOx,y
 #
+# ## Parameters
+#
+# ### x = x-axis location (in dots)
+#
+# - Default Value: 0
+# - Accepted Values: 0 to 32000
+#
+# ###y = y-axis location (in dots)
+#
+# - Default Value: 0
+# - Accepted Values: 0 to 32000
+#
 # ## Notes
 #
 # If the value entered for the x or y parameter is too high, it could position
@@ -14,18 +26,18 @@ module ZebraZpl::Commands::FieldOrigin
 
   COMMAND = '^FO'
 
-  # Builder Usage:
+  # specifies a field origin, relative to the label home
   #
-  # ```ruby
-  # ZebraZpl::Label.build { origin 3, 2 }
-  # ```
+  # @overload origin= x, y
+  #   @param [Integer] x the x position (in dots)
+  #   @param [Integer] y the y position (in dots)
   #
-  # Field Usage:
+  # @example using with builder
+  #   ZebraZpl::Label.build { origin 3, 2 }
   #
-  # ```ruby
-  # f = ZebraZpl::Label.new
-  # f.origin = 3, 2
-  # ```
+  # @example setting directly on a field
+  #   f = ZebraZpl::Label.new
+  #   f.origin = 3, 2
   def origin= *args
     @data << "#{ COMMAND }#{ [*args].join ',' }"
   end

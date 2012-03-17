@@ -23,18 +23,16 @@ module ZebraZpl::Commands::Orientation
 
   COMMAND = '^FW'
 
-  # Builder Usage:
+  # specifies the default orientation for all command fields
   #
-  # ```ruby
-  # ZebraZpl::Label.build { orientation :r }
-  # ```
+  # @param orientation [String] the direction identifier
   #
-  # Label Usage:
+  # @example using with builder
+  #   ZebraZpl::Label.build { orientation :r }
   #
-  # ```ruby
-  # f = ZebraZpl::Label.new
-  # f.orientation = :r
-  #```
+  # @example setting directly on a label
+  #   f = ZebraZpl::Label.new
+  #   f.orientation = :r
   def orientation= rotation
     @data << "#{ COMMAND }#{ rotation.to_s.upcase }"
   end

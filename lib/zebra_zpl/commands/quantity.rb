@@ -36,18 +36,17 @@ module ZebraZpl::Commands::Quantity
 
   COMMAND = '^PQ'
 
-  # Builder Usage:
+  # specifies the number of labels to print
   #
-  # ```ruby
-  # ZebraZpl::Label.build { quantity 2 }
-  # ```
+  # @overload quantity= qty
+  #   @param [Integer] qty the number of labels to print
   #
-  # Label Usage:
+  # @example using with builder
+  #   ZebraZpl::Label.build { quantity 2 }
   #
-  # ```ruby
-  # f = ZebraZpl::Label.new
-  # f.quantity = 2
-  # ```
+  # @example setting directly on a label
+  #   f = ZebraZpl::Label.new
+  #   f.quantity = 2
   def quantity= *args
     @data << "#{ COMMAND }#{ args.join ',' }"
   end

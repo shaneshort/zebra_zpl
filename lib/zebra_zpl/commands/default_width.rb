@@ -28,22 +28,18 @@ module ZebraZpl::Commands::DefaultWidth
 
   COMMAND = '^BY'
 
-  # Builder Usage:
+  # specifies default values for the module width
   #
-  # ```ruby
-  # ZebraZpl::Label.build { default_width 3 }
-  # ZebraZpl::Label.build { default_width 3, 2 }
-  # ZebraZpl::Label.build { default_width 3, 2, 10 }
-  # ```
+  # @overload default_width= w, r, h
+  #   @param [Integer] w the module width (in dots)
+  #   @param [Integer] r the wide bar to narrow bar width ratio
+  #   @param [Integer] h the bar code height (in dots)
   #
-  # Field Usage:
+  # @example using with builder
+  #   ZebraZpl::Label.build { default_width 3, 2, 10 }
   #
-  # ```ruby
-  # f = ZebraZpl::Label.new
-  # f.default_width = 3
-  # f.default_width = 3, 2
-  # f.default_width = 3, 2, 10
-  # ```
+  # @example setting directly on a field
+  #   f.default_width = 3, 2, 10
   def default_width= *args
     @data << "#{ COMMAND }#{ [*args].join ',' }"
   end

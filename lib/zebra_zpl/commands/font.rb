@@ -1,6 +1,6 @@
 # # ^A - Scalable/Bitmapped Font
 #
-# The ^A command specifies the font to use in a textfield. ^A designates the font for the current ^FD statement or field. The font specified by ^A is used only once for that ^FD entry. If a value for ^A is not specified again, the default ^CF font is used for the next ^FD entry.
+# The ^A command specifies the font to use in a text field. ^A designates the font for the current ^FD statement or field. The font specified by ^A is used only once for that ^FD entry. If a value for ^A is not specified again, the default ^CF font is used for the next ^FD entry.
 #
 # ## Format
 #
@@ -43,26 +43,21 @@ module ZebraZpl::Commands::Font
 
   COMMAND = '^A'
 
-  # Builder Usage:
+  # specifies the font to use in a text field
   #
-  # ```ruby
-  # ZebraZpl::Field.build { font :a }
-  # ZebraZpl::Field.build { font :b, :orientation => :n }
-  # ZebraZpl::Field.build { font :c, height: 30 }
-  # ZebraZpl::Field.build { font :d, height: 15, width: 20 }
-  # ZebraZpl::Field.build { font :e, :orientation => :r, height: 15, width: 20 }
-  # ```
+  # @overload font= name, opts
+  #   @param [String] name the name of the font to use
+  #   @option opts [String] :orientation the orientation
+  #   @option opts [String] :height      the height (in dots)
+  #   @option opts [String] :width       the width (in dots)
   #
-  # Field Usage:
+  # @see ZebraZpl::Commands::Orientation
   #
-  # ```ruby
-  # f = ZebraZpl::Field.new
-  # f.font = :a
-  # f.font = :b, :orientation => :n
-  # f.font = :c, height: 30
-  # f.font = :d, height: 15, width: 20
-  # f.font = :e, :orientation => :r, height: 15, width: 20
-  # ```
+  # @example using with builder
+  #   ZebraZpl::Field.build { font :e, :orientation => :r, height: 15, width: 20 }
+  #
+  # @example setting directly on a field
+  #   f.font = :e, :orientation => :r, height: 15, width: 20
   def font= *args
     name, options = args
     options ||= {}

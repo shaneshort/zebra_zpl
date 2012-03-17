@@ -1,4 +1,5 @@
 # # ^PR Print Rate
+#
 # The ^PR command determines the media and slew speed (feeding a blank label) during printing.
 #
 # The printer operates with the selected speeds until the setting is reissued or the printer is turned off.
@@ -63,18 +64,19 @@ module ZebraZpl::Commands::PrintRate
 
   COMMAND = '^PR'
 
-  # Builder Usage:
+  # specifies the media and slew speed
   #
-  # ```ruby
-  # ZebraZpl::Label.build { print_rate :a }
-  # ```
+  # @overload print_rate= print_speed, slew_speed, backfeed_speed
+  #   @param [Integer] print_speed    the speed to print
+  #   @param [Integer] slew_speed     the speed to feed blank labels
+  #   @param [Integer] backfeed_speed the reverse speed
   #
-  # Label Usage:
+  # @example using with builder
+  #   ZebraZpl::Label.build { print_rate :a }
   #
-  # ```ruby
-  # f = ZebraZpl::Label.new
-  # f.print_rate = :a
-  # ```
+  # @example setting directly on a label
+  #   f = ZebraZpl::Label.new
+  #   f.print_rate = :a
   def print_rate= *args
     print_speed, slew_speed, backfeed_speed = [*args]
 

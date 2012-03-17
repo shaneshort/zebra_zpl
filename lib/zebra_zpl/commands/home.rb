@@ -32,18 +32,18 @@ module ZebraZpl::Commands::Home
 
   COMMAND = '^LH'
 
-  # Builder Usage:
+  # specifies the label home position
   #
-  # ```ruby
-  # ZebraZpl::Label.build { home 3, 2 }
-  # ```
+  # @overload home= x, y
+  #   @param [Integer] x the x position (in dots)
+  #   @param [Integer] y the y position (in dots)
   #
-  # Label Usage:
+  # @example using with builder
+  #   ZebraZpl::Label.build { home 3, 2 }
   #
-  # ```ruby
-  # f = ZebraZpl::Label.new
-  # f.home = 3, 2
-  # ```
+  # @example setting directly on a label
+  #   f = ZebraZpl::Label.new
+  #   f.home = 3, 2
   def home= *args
     @data << "#{ COMMAND }#{ [*args].join ',' }"
   end
