@@ -16,5 +16,5 @@ Gem::Specification.new do |s|
   s.executables   = `git ls-files -- bin/*`.split("\n").map{ |f| File.basename f }
   s.require_paths = ['lib']
 
-  %w[ cover_me zebra_zpl rspec pry pry-nav ].each { |lib| s.add_development_dependency lib }
+  %w[ cover_me zebra_zpl rspec pry pry-nav yard redcarpet github-markup ].each { |lib| s.add_development_dependency lib }
 end
